@@ -1,4 +1,4 @@
-# SyncSenseApp – Behavioral Biometrics Data Logger 📱
+# SyncSenseApp – Behavioral Biometrics Data Logger 
 
 SyncSenseApp is a privacy-conscious mobile app built with **React Native** and **Expo**, designed to collect **gesture-based behavioral data** for training AI models in continuous authentication.
 
