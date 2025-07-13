@@ -8,10 +8,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-// Removed direct Firebase imports as saveGesture will handle it
-// import { getDatabase, ref, push } from 'firebase/database';
-// import { db } from '../firebase'; // Assuming db is exported from firebase.js
-import { saveGesture } from '../utils/saveGesture'; // Import saveGesture
+
+import { saveGesture } from '../utils/saveGesture'; 
 
 const { height } = Dimensions.get('window');
 
@@ -176,13 +174,13 @@ export default function ScrollScreen() {
     const timeDiff = Math.max(timeNow - lastScrollTime.current, 1); // in ms
     const speed = deltaY / (timeDiff / 1000); // px/sec
 
-    // Only record speed if there was actual movement
+
     if (Math.abs(deltaY) > 0) {
       if (deltaY < 0) {
-        // Scrolling up
+      
         scrollUpSpeeds.current.push(Math.abs(speed));
       } else if (deltaY > 0) {
-        // Scrolling down
+  
         scrollDownSpeeds.current.push(Math.abs(speed));
       }
     }
@@ -203,10 +201,10 @@ export default function ScrollScreen() {
     const avgUpSpeed = calculateAverage(scrollUpSpeeds.current);
     const avgDownSpeed = calculateAverage(scrollDownSpeeds.current);
 
-    // Use saveGesture to store the aggregated scroll data
+  
     await saveGesture({
       username,
-      gestureType: 'scrollSummary', // A new gestureType for aggregated scroll data
+      gestureType: 'scrollSummary', 
       screen: 'ScrollScreen',
       extraData: {
         avgScrollUpSpeed: avgUpSpeed,
