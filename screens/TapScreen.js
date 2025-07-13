@@ -8,7 +8,7 @@ import * as Location from 'expo-location';
 export default function TapScreen() {
   const [tapped, setTapped] = useState(Array(10).fill(false));
   const [tapCount, setTapCount] = useState(0);
-  const [location, setLocation] = useState(null); // This will now store the full LocationObject
+  const [location, setLocation] = useState(null); 
   const navigation = useNavigation();
   const route = useRoute();
   const username = route.params?.username || 'User';
@@ -25,12 +25,12 @@ export default function TapScreen() {
       }
 
       try {
-        // Store the entire currentLocation object, not just .coords
+      
         let currentLocation = await Location.getCurrentPositionAsync({});
         setLocation(currentLocation); // Store the full object
-        console.log('✅ TapScreen: Location obtained');
+        console.log('TapScreen: Location obtained');
       } catch (error) {
-        console.error('❌ TapScreen: Error getting location:', error);
+        console.error(' TapScreen: Error getting location:', error);
         Alert.alert(
           'Location Error',
           'Could not get current location. Tap data will be saved without location details.'
@@ -58,9 +58,9 @@ export default function TapScreen() {
       tapNumber: newCount,
     };
 
-    // Access latitude, longitude from location.coords, and timestamp from location directly
+ 
     if (location && location.coords) {
-      // Ensure latitude and longitude are numbers, otherwise set to null
+    
       extraData.latitude =
         typeof location.coords.latitude === 'number'
           ? location.coords.latitude
@@ -69,7 +69,7 @@ export default function TapScreen() {
         typeof location.coords.longitude === 'number'
           ? location.coords.longitude
           : null;
-      // Ensure locationTimestamp is a number. If not, use current Date.now() as a fallback.
+ 
       extraData.locationTimestamp =
         typeof location.timestamp === 'number'
           ? location.timestamp
@@ -78,7 +78,7 @@ export default function TapScreen() {
       console.warn(
         'Location not available or incomplete when saving tap gesture.'
       );
-      // Explicitly set to null if location data is not available
+   
       extraData.latitude = null;
       extraData.longitude = null;
       extraData.locationTimestamp = null;
