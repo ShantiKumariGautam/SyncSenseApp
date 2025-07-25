@@ -66,7 +66,7 @@ Instead of traditional password systems, this app captures real-world user behav
 ---
 
 <p align="center">
-  <img src="assets/Demo.pdf" alt="Glimpse" width="400"/>
+  <img src="assets/Glimpse.jpg" alt="Glimpse" width="400"/>
 </p>
 
 ## 🛠️ Tech Stack
