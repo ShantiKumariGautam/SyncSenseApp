@@ -4,6 +4,10 @@ SyncSenseApp is a privacy-conscious mobile app built with **React Native** and *
 
 Instead of traditional password systems, this app captures real-world user behaviors like **touch patterns**, **scroll speed**, **device motion**, and **location context**, forming a solid base for training models in **behavior-based authentication**.
 
+<p align="center">
+  <img src="assets/logo.png.jpg" alt="Logo" width="400"/>
+</p>
+
 ## 🔗 APK Installation
 
 > ⚠️ This is a standalone APK build. You do **not** need Expo Go.
@@ -60,6 +64,10 @@ Instead of traditional password systems, this app captures real-world user behav
 📍 _Saved under:_ `users/{username}/{sessionId}/location`
 
 ---
+
+<p align="center">
+  <img src="assets/Demo.pdf" alt="Glimpse" width="400"/>
+</p>
 
 ## 🛠️ Tech Stack
 
